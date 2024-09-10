@@ -1,8 +1,7 @@
-FROM python:3.11-slim
+FROM python:3.10
 
 WORKDIR /app
 
-COPY gerador_senhas.py .
+COPY gerador_senhas.py /app/
 
-# Comando para executar o script
-CMD ["python", "gerador_senhas.py"]
+ENTRYPOINT ["python", "gerador_senhas.py"]
