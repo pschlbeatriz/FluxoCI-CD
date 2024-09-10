@@ -1,6 +1,6 @@
-import argparse
 import random
 import string
+import argparse
 
 def gerar_senha(tamanho=8, incluir_maiusculas=True, incluir_numeros=True, incluir_pontuacao=True):
     caracteres = string.ascii_lowercase
@@ -18,18 +18,15 @@ def gerar_senha(tamanho=8, incluir_maiusculas=True, incluir_numeros=True, inclui
     return senha
 
 def main():
-    parser = argparse.ArgumentParser(description="Gerador de senhas")
+    parser = argparse.ArgumentParser(description="Gerador de Senhas")
     parser.add_argument('--tamanho', type=int, default=8, help="Tamanho da senha (mínimo 1)")
     parser.add_argument('--maiusculas', action='store_true', help="Incluir letras maiúsculas")
     parser.add_argument('--numeros', action='store_true', help="Incluir números")
     parser.add_argument('--pontuacao', action='store_true', help="Incluir caracteres especiais")
-
+    
     args = parser.parse_args()
 
     try:
-        if args.tamanho < 1:
-            raise ValueError("O tamanho da senha deve ser pelo menos 1.")
-        
         senha = gerar_senha(args.tamanho, args.maiusculas, args.numeros, args.pontuacao)
         print("Senha gerada:", senha)
     
