@@ -1,9 +1,1 @@
-name: myenv
-channels:
-  - defaults
-dependencies:
-  - python=3.10
-  - pip
-  - pip:
-    - flake8
-    - pytest
+# Nenhuma dependência externa é necessária além do unittest (incluso no Python)
