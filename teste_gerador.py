@@ -14,4 +14,15 @@ class TestGeradorSenhas(unittest.TestCase):
 
     def test_senha_com_numeros(self):
         senha = gerar_senha(12, incluir_numeros=True)
-        self.a
+        self.assertTrue(any(char.isdigit() for char in senha), "A senha deve conter números.")
+
+    def test_senha_com_pontuacao(self):
+        senha = gerar_senha(12, incluir_pontuacao=True)
+        self.assertTrue(any(char in string.punctuation for char in senha), "A senha deve conter caracteres especiais.")
+
+    def test_senha_sem_caracteres(self):
+        with self.assertRaises(ValueError):
+            gerar_senha(12, incluir_maiusculas=False, incluir_numeros=False, incluir_pontuacao=False)
+
+if __name__ == "__main__":
+    unittest.main()
