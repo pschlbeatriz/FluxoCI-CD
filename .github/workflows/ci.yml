@@ -34,6 +34,4 @@ jobs:
     steps:
       - name: Send notification to Microsoft Teams
         run: |
-          curl -H 'Content-Type: application/json' \
-          -d '{"text": "Novo commit no branch main por '${{ github.actor }}'. Status: ${{ job.status }}"}' \
-          <https://primecontrol1.webhook.office.com/webhookb2/aacf295b-b412-4b44-ac7b-623499db41d0@3c924ffe-f013-49fb-ab9c-abc7152969ad/IncomingWebhook/837a5fdf8122428dabc8bebdc53d7775/e8c5b964-7b1c-4b7d-bc67-8ad84922bd8b>
+          curl -H 'Content-Type: application/json' -d '{"text": "Novo commit na branch main por '${{ github.actor }}'. Status: ${{ job.status }}"}' https://primecontrol1.webhook.office.com/webhookb2/aacf295b-b412-4b44-ac7b-623499db41d0@3c924ffe-f013-49fb-ab9c-abc7152969ad/IncomingWebhook/837a5fdf8122428dabc8bebdc53d7775/e8c5b964-7b1c-4b7d-bc67-8ad84922bd8b
