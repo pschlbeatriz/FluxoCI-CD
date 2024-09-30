@@ -25,8 +25,6 @@ class TestGeradorSenhas(unittest.TestCase):
     #     with self.assertRaises(ValueError):
     #         gerar_senha(12, incluir_maiusculas=False, incluir_numeros=False, incluir_pontuacao=False)
 
-class TestGeradorSenhas(unittest.TestCase):
-
     # Novo Teste 01: Geração de senha sem números
     def test_senha_sem_numeros(self):
         senha = gerar_senha(12, incluir_numeros=False)
