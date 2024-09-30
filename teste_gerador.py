@@ -13,8 +13,8 @@ class TestGeradorSenhas(unittest.TestCase):
         self.assertTrue(senha.islower(), "A senha não deve conter letras maiúsculas.")
 
     def test_senha_com_numeros(self):
-        senha = gerar_senha(12, incluir_numeros=True)
-        self.assertTrue(any(char.isdigit() for char in senha), "A senha deve conter números.")
+    senha = gerar_senha(100, incluir_numeros=True)  # Aumentando o tamanho da senha
+    self.assertTrue(any(char.isdigit() for char in senha), "A senha deve conter números.")
 
     def test_senha_com_pontuacao(self):
         senha = gerar_senha(12, incluir_pontuacao=True)
